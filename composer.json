@@ -1,0 +1,36 @@
+{
+    "name": "projectsaturnstudios/json-rpc",
+    "description": "A Laravel package for implementing the Remote Procedure Call (RPC) protocol",
+    "type": "library",
+    "version": "0.0.2",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Project Saturn Studios, LLC",
+            "email": "info@prejectsaturnstudios.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "spatie/laravel-data": "^4.11",
+        "lorisleiva/laravel-actions": "^2.6"
+    },
+    "require-dev": {},
+    "autoload":{
+        "psr-4": {
+            "JSONRPC\\": "src/"
+        }
+    },
+    "autoload-dev":{
+        "psr-4": {}
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JSONRPC\\Providers\\JSONRPCServiceProvider"
+            ]
+        }
+    }
+}
