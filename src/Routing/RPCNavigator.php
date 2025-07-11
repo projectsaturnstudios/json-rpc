@@ -44,6 +44,7 @@ class RPCNavigator
      */
     public function __call(string $method, array $args): mixed
     {
+
         if($args[0] instanceof RPCRequest) {
             // @todo - implement middleware
             $methodsplosion = explode('/', $method);
