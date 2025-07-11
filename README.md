@@ -403,6 +403,31 @@ The package supports hierarchical method routing:
 - `api/v1/calculator` → `MathController::handle()`
 - `api/v1/calculator/add` → `MathController::add()`
 
+## Artisan Commands
+
+### List Registered Methods
+
+You can view all registered RPC methods using the provided Artisan command:
+
+```bash
+php artisan method:list
+```
+
+This will display a formatted list of all registered methods and their corresponding controllers:
+
+```
+  math ......................... App\Http\Controllers\RPC\MathController
+  weather ..................... App\Http\Controllers\RPC\WeatherController  
+  api/v1/calculator ........... App\Http\Controllers\RPC\MathController
+
+        Showing [3] RPC methods
+```
+
+This command is useful for:
+- Debugging method registration issues
+- Viewing the current state of your RPC routing
+- Documenting available methods for your team
+
 ## Testing
 
 ```bash

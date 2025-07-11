@@ -3,11 +3,16 @@
 namespace JSONRPC\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use JSONRPC\Console\Commands\ListMethodsCommand;
 use JSONRPC\RemoteProcedureCall;
 use JSONRPC\Routing\RPCNavigator;
 
 class JSONRPCServiceProvider extends ServiceProvider
 {
+
+    protected array $commands = [
+        ListMethodsCommand::class,
+    ];
 
     public function register(): void
     {
@@ -19,6 +24,7 @@ class JSONRPCServiceProvider extends ServiceProvider
         RemoteProcedureCall::boot();
         RPCNavigator::boot();
         $this->registerRPCMethods();
+        $this->commands($this->commands);
     }
 
     protected function registerRPCMethods():  void
