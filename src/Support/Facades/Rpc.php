@@ -3,7 +3,12 @@
 namespace JSONRPC\Support\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use JSONRPC\Routing\RPCNavigator;
 
+/**
+ * @method static RPCNavigator method(string $method, string $method_class)
+ * @see \JSONRPC\RemoteProcedureCall
+ */
 class Rpc extends Facade
 {
     /**

@@ -2,6 +2,9 @@
 
 A Laravel package for implementing the JSON-RPC 2.0 protocol with elegant attribute-based routing and clean data handling.
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/projectsaturnstudios/json-rpc.svg?style=flat-square)](https://packagist.org/packages/projectsaturnstudios/json-rpc)
+[![Total Downloads](https://img.shields.io/packagist/dt/projectsaturnstudios/json-rpc.svg?style=flat-square)](https://packagist.org/packages/projectsaturnstudios/json-rpc)
+
 ## Features
 
 - 🚀 **JSON-RPC 2.0 Compliant** - Full implementation of the JSON-RPC 2.0 specification

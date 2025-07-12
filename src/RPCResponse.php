@@ -15,7 +15,7 @@ class RPCResponse extends Data
      */
     public function __construct(
         public readonly string|int $id,
-        public readonly string|array|null $result = null,
+        public readonly mixed $result = null,
         public readonly ?RPCErrorObject $error = null
     ) {
         if(is_null($result) && is_null($error)) throw RPCResponseException::missingResultOrError();

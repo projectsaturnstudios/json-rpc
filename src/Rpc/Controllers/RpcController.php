@@ -3,6 +3,7 @@
 namespace JSONRPC\Rpc\Controllers;
 
 use JSONRPC\Attributes\MethodController;
+use JSONRPC\RPCRequest;
 
 abstract class RpcController
 {
@@ -33,5 +34,10 @@ abstract class RpcController
             throw new \RuntimeException('MethodController attribute not found.');
         }
         return $attribute->route;
+    }
+
+    public function makeRequest(array $message): RPCRequest
+    {
+        throw new \RuntimeException('makeRequest method not found.');
     }
 }
