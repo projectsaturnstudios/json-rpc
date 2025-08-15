@@ -1,8 +1,8 @@
 <?php
 
-namespace JSONRPC\Enums;
+namespace ProjectSaturnStudios\RpcServer\Enums;
 
-enum RPCErrorCode: int
+enum RpcErrorCode: int
 {
     case PARSE_ERROR = -32700;
     case INVALID_REQUEST = -32600;

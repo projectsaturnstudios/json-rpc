@@ -2,35 +2,70 @@
     "name": "projectsaturnstudios/json-rpc",
     "description": "A Laravel package for implementing the Remote Procedure Call (RPC) protocol",
     "type": "library",
-    "version": "0.0.5",
+    "version": "0.1.0",
     "license": "MIT",
     "authors": [
         {
             "name": "Project Saturn Studios, LLC",
-            "email": "info@prejectsaturnstudios.com"
+            "email": "info@projectsaturnstudios.com"
         }
     ],
     "require": {
         "php": "^8.2",
         "ext-json": "*",
         "spatie/laravel-data": "^4.11",
-        "lorisleiva/laravel-actions": "^2.6"
+        "lorisleiva/laravel-actions": "^2.6",
+        "projectsaturnstudios/laravel-design-patterns": "^0.1.0"
     },
-    "require-dev": {},
+    "require-dev": {
+        "pestphp/pest": "^3.8",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "orchestra/testbench": "^9.14",
+        "mockery/mockery": "^1.6"
+    },
     "autoload":{
         "psr-4": {
-            "JSONRPC\\": "src/"
-        }
+            "ProjectSaturnStudios\\RpcServer\\": "src/"
+        },
+        "files": [
+            "src/Helpers/samples.php",
+            "src/Helpers/procedure_calls.php"
+        ]
     },
     "autoload-dev":{
-        "psr-4": {}
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
-    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../laravel-design-patterns"
+        },
+        {
+            "type": "path",
+            "url": "../php-design-patterns"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": [
-                "JSONRPC\\Providers\\JSONRPCServiceProvider"
+                "ProjectSaturnStudios\\RpcServer\\Providers\\RpcServerServiceProvider"
             ]
+        }
+    },
+    "scripts": {
+        "test": "XDEBUG_MODE=coverage pest",
+        "test-coverage": "XDEBUG_MODE=coverage pest --coverage",
+        "test-coverage-html": "XDEBUG_MODE=coverage pest --coverage --coverage-html=tests/coverage",
+        "test-coverage-text": "XDEBUG_MODE=coverage pest --coverage --coverage-text",
+        "test-coverage-clover": "XDEBUG_MODE=coverage pest --coverage --coverage-clover=tests/coverage.xml"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }

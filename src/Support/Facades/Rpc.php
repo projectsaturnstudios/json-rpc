@@ -1,15 +1,22 @@
 <?php
 
-namespace JSONRPC\Support\Facades;
+namespace ProjectSaturnStudios\RpcServer\Support\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use JSONRPC\Routing\RPCNavigator;
+use ProjectSaturnStudios\RpcServer\Routing\ProcedureCallRegistrar;
+use ProjectSaturnStudios\RpcServer\RpcServer;
+use ProjectSaturnStudios\RpcServer\RemoteProcedureCall;
 
 /**
- * @method static RPCNavigator method(string $method, string $method_class)
- * @see \JSONRPC\RemoteProcedureCall
+ * @method static RemoteProcedureCall procedure(string $uri, array|string|callable|null $action = null)
+ * @method static ProcedureCallRegistrar prefix(string $prefix)
+ * @method static ProcedureCallRegistrar middleware(string|array|null $middleware)
+ * @method static \ProjectSaturnStudios\RpcServer\Interfaces\ProcedureCallResultContract dispatch(\ProjectSaturnStudios\RpcServer\Interfaces\ProcedureCallRequestContract $request)
+ *
+ *
+ * @see RpcServer
  */
-class Rpc extends Facade
+class RPC extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -18,6 +25,6 @@ class Rpc extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return 'rpc';
+        return RpcServer::class;
     }
 }

@@ -1,10 +1,8 @@
 <?php
 
 return [
-    'registration' => [
-        'driver' => 'default',
-        'drivers' => [
-            'default' => [],
-        ]
-    ]
+    'sample_procedures' => env('SAMPLE_RPC_PROCEDURES', false),
 ];
+
+
+
