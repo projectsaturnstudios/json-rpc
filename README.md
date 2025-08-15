@@ -38,7 +38,7 @@ use ProjectSaturnStudios\RpcServer\Support\Facades\RPC;
 
 RPC::procedure('some_method', SomeProcedureClass::class);
 RPC::procedure('some_method', SomeProcedureClass::class."@index");
-RPC::prefix('notifications')->group(fucntion() {
+RPC::prefix('notifications')->group(function() {
     RPC::procedure('some_method', SomeProcedureClass::class); //registers as notifications/some_method
 });
 
@@ -50,7 +50,7 @@ use ProjectSaturnStudios\RpcServer\Support\Facades\RPC;
 
 RPC::procedure('some_method', SomeProcedureClass::class)->middleware([SomeMiddleware::class]);
 RPC::procedure('some_method', SomeProcedureClass::class."@index")->middleware([SomeMiddleware::class]);
-RPC::prefix('notifications')->group(fucntion() {
+RPC::prefix('notifications')->group(function() {
     RPC::procedure('some_method', SomeProcedureClass::class); //registers as notifications/some_method
 })->middleware([SomeMiddleware::class]);
 ```
