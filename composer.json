@@ -1,8 +1,8 @@
 {
-    "name": "projectsaturnstudios/json-rpc",
+    "name": "superconductor/rpc",
     "description": "A Laravel package for implementing the Remote Procedure Call (RPC) protocol",
     "type": "library",
-    "version": "0.1.0",
+    "version": "0.3.0",
     "license": "MIT",
     "authors": [
         {
@@ -25,12 +25,8 @@
     },
     "autoload":{
         "psr-4": {
-            "ProjectSaturnStudios\\RpcServer\\": "src/"
-        },
-        "files": [
-            "src/Helpers/samples.php",
-            "src/Helpers/procedure_calls.php"
-        ]
+            "Superconductor\\Rpc\\": "src/"
+        }
     },
     "autoload-dev":{
         "psr-4": {
@@ -42,7 +38,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ProjectSaturnStudios\\RpcServer\\Providers\\RpcServerServiceProvider"
+                "Superconductor\\Rpc\\Providers\\RpcServiceProvider"
             ]
         }
     },

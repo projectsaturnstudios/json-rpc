@@ -1,30 +1,20 @@
 <?php
 
-namespace ProjectSaturnStudios\RpcServer\Support\Facades;
+namespace Superconductor\Rpc\Support\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use ProjectSaturnStudios\RpcServer\Routing\ProcedureCallRegistrar;
-use ProjectSaturnStudios\RpcServer\RpcServer;
-use ProjectSaturnStudios\RpcServer\RemoteProcedureCall;
+use Superconductor\Rpc\DTO\Messages\Outgoing\RpcError;
+use Superconductor\Rpc\DTO\Messages\Incoming\RpcNotification;
 
 /**
- * @method static RemoteProcedureCall procedure(string $uri, array|string|callable|null $action = null)
- * @method static ProcedureCallRegistrar prefix(string $prefix)
- * @method static ProcedureCallRegistrar middleware(string|array|null $middleware)
- * @method static \ProjectSaturnStudios\RpcServer\Interfaces\ProcedureCallResultContract dispatch(\ProjectSaturnStudios\RpcServer\Interfaces\ProcedureCallRequestContract $request)
- *
- *
- * @see RpcServer
+ * @method static \Superconductor\Rpc\ProcedureRoute method(string $method, string $action)
+ * @method static bool|RpcError notify(RpcNotification $message)
+ * @see \Superconductor\Rpc\ProcedureRegistrar
  */
 class RPC extends Facade
 {
-    /**
-     * Get the registered name of the component.
-     *
-     * @return string
-     */
     protected static function getFacadeAccessor(): string
     {
-        return RpcServer::class;
+        return 'rpc';
     }
 }

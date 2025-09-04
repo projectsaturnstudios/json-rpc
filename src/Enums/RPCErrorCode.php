@@ -1,8 +1,8 @@
 <?php
 
-namespace ProjectSaturnStudios\RpcServer\Enums;
+namespace Superconductor\Rpc\Enums;
 
-enum RpcErrorCode: int
+enum RPCErrorCode: int
 {
     case PARSE_ERROR = -32700;
     case INVALID_REQUEST = -32600;
