@@ -2,7 +2,7 @@
     "name": "superconductor/rpc",
     "description": "A Laravel package for implementing the Remote Procedure Call (RPC) protocol",
     "type": "library",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "license": "MIT",
     "authors": [
         {
