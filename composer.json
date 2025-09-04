@@ -37,16 +37,6 @@
             "Tests\\": "tests/"
         }
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../laravel-design-patterns"
-        },
-        {
-            "type": "path",
-            "url": "../php-design-patterns"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
